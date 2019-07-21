@@ -1,0 +1,11 @@
+[public-ip]
+command=curl icanhazip.com
+interval=once
+
+[date]
+command=date +%D
+interval=5
+
+[time]
+command=date +%H:%m
+interval=5
