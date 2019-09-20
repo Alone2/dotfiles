@@ -1,11 +1,33 @@
-[public-ip]
-command=curl icanhazip.com
-interval=once
+align=center
+color=#777777
+separator=false
+separator_block_width=18
+
+[memory]
+command=/home/alain/.config/i3blocks/memory
+label=MEM
+interval=30
+
+[local-ip]
+command=ip route get 1 | awk '{print $7;exit}'
+interval=200
 
 [date]
-command=date +%D
+command=date +%d/%m/%Y
 interval=5
 
+[volume]
+command=/home/alain/.config/i3blocks/volume
+label=♪
+interval=once
+signal=10
+
+[battery]
+label=⚡
+command=cat /sys/class/power_supply/BAT0/capacity 
+interval=30
+
 [time]
-command=date +%H:%m
+command=date +%H:%M
 interval=5
+

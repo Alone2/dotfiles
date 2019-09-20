@@ -38,15 +38,17 @@
 *.color15: #fdf6e3
 
 !! Appearance
-urxvt.termName: rxvt-unicode
-urxvt.scrollBar: false
-urxvt.background: black
-urxvt.foreground: gray
+URxvt.termName: rxvt-unicode
+URxvt.scrollBar: false
+URxvt.background: black
+URxvt.foreground: gray
 !! Font prefferenes
-urxvt.font: xft:Fira Code:pixelsize=13
-urxvt.boldFont: xft:Fira Code:pixelsize=13:weight=bold
-urxvt.letterSpace: -1
+URxvt.font: xft:Hack:pixelsize=14
+URxvt.boldFont: xft:Hack:pixelsize=14:weight=bold
+URxvt.letterSpace: -1
 !! Larger history limit
-urxvt.saveLines: 1000000
+URxvt.saveLines: 1000000
 
-
+!! fancy  stuff
+URxvt.transparent:   true
+URxvt.shading:       15

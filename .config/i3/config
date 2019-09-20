@@ -5,15 +5,21 @@
 # this file and re-run i3-config-wizard(1).
 #
 
+exec --no-startup-id nm-applet
+exec --no-startup-id blueman-applet
+
+exec --no-startup-id i3-msg 'workspace 10; exec firefox; workspace 1; exec urxvt'
 
 exec "setxkbmap -layout ch"
+
+exec xinput set-prop 12 309 1
+exec xinput set-prop 12 319 1
 
 # i3 config file (v4)
 #
 # Please 3see https://i3wm.org/docs/userguide.html for a complete reference!
 
-set $mod Mod1
-
+set $mod Mod1 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
 
@@ -198,7 +204,9 @@ smart_borders no_gaps
 for_window [class="^.*"] border pixel 1
 # Background
 exec --no-startup-id nitrogen --restore
-exec --no-startup-id feh --bg-fill ~/images/arch2.pn
+#exec --no-startup-id feh --bg-fill ~/Pictures/arch.png
+exec --no-startup-id ~/.fehbg
+
 
 # colors
 
@@ -207,3 +215,52 @@ client.focused               #141414 #40bf80 #40bf80
 client.focused_inactive #101010 #191919 #999999
 client.unfocused           #101010 #191919 #999999
 client.urgent                 #cd989a #cd989a #2f362f
+
+
+## Volume control
+
+# Path to volume control, without trailing slash
+set $volumepath ~/i3-volume
+
+# Command for the status line
+#   ie: i3blocks, i3status
+set $statuscmd i3blocks
+
+# Signal used to update the status line
+#   i3blocks uses SIGRTMIN+10 by default
+#   i3status uses SIGUSR1 by default
+set $statussig SIGRTMIN+10
+
+# Amount to increase/decrease volume as a percentage
+set $volumestep 2
+set $volumestepop 5
+
+# alsa-utils settings
+#
+# To configure a default card, see https://www.alsa-project.org/main/index.php/Asoundrc
+#
+# Card number to control.
+#   If not specified, i3-volume will let `amixer` use a default.
+#   List cards: aplay -l
+#set $alsacard 1
+
+# append "-c $alsacard" without quotes to override default card
+# bindsym XF86AudioRaiseVolume exec $volumepath/volume -anp -i $volumestep -t $statuscmd -u $statussig
+bindsym XF86AudioRaiseVolume exec $volumepath/volume -anp -i $volumestep -t $statuscmd -u $statussig
+bindsym XF86AudioLowerVolume exec $volumepath/volume -anp -d $volumestep -t $statuscmd -u $statussig
+bindsym XF86AudioMute        exec $volumepath/volume -amn -t $statuscmd -u $statussig
+
+# mod -p and mod -o
+bindsym $mod+p exec $volumepath/volume -anp -i $volumestepop -t $statuscmd -u $statussig
+bindsym $mod+o exec $volumepath/volume -anp -d $volumestepop -t $statuscmd -u $statussig
+
+
+# Screen brightness
+bindsym XF86MonBrightnessUp exec xbacklight -inc 10 # increase screen brightness
+bindsym XF86MonBrightnessDown exec xbacklight -dec 10 # decrease screen brightness
+
+# Screenshot
+
+# Multi-screen screenshots with scrot
+bindsym --release Print exec scrot 'screenshot_%Y%m%d_%H%M%S.png' -e 'mkdir -p ~/Pictures/screenshots && mv $f ~/Pictures/screenshots && xclip -selection clipboard -t image/png -i ~/Pictures/screenshots/`ls -1 -t ~/Pictures/screenshots | head -1`' # All screens
+
