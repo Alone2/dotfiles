@@ -1,6 +1,6 @@
 echo WARNING: RUN SCRIPT AS USER NOT ROOT
 
-sudo pacman -S ttf-fira-code gnu-free-fonts ttf-hack noto-fonts ttf-roboto dmenu sway rxvt-unicode i3blocks firefox xorg-server-xwayland base-devel dunst
+sudo pacman -S ttf-fira-code gnu-free-fonts ttf-hack noto-fonts ttf-roboto rofi sway rxvt-unicode i3blocks firefox xorg-server-xwayland base-devel dunst
 
 mkdir ~/.config
 mkdir ~/.config/sway
