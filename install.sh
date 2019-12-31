@@ -10,6 +10,7 @@ sudo cp .config/sway/config ~/.config/sway/config
 sudo cp .Xdefaults ~/.Xdefaults
 sudo cp .config/i3blocks/* ~/.config/i3blocks/
 sudo cp .bashrc ~/.bashrc
+sudo cp .bash_profile ~/.bash_profile
 
 mkdir ~/Temp
 cd ~/Temp
