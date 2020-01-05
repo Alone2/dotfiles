@@ -9,10 +9,13 @@ mkdir ~/.config/environment.d
 
 sudo cp .config/sway/config ~/.config/sway/config
 sudo cp .Xdefaults ~/.Xdefaults
-sudo cp .config/environment.d/envvars.conf ~/.config/environment.d/envvars.conf 
+sudo cp .config/environment.d/profile.conf ~/.config/environment.d/profile.conf 
 sudo cp .config/i3blocks/* ~/.config/i3blocks/
 sudo cp .bashrc ~/.bashrc
 sudo cp .bash_profile ~/.bash_profile
+
+sudo systemctl enable NetworkManager
+sudo systemctl start NetworkManager
 
 mkdir ~/Temp
 cd ~/Temp
