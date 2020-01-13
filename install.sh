@@ -4,6 +4,9 @@ sudo pacman -S ttf-fira-code gnu-free-fonts ttf-hack noto-fonts ttf-roboto rofi 
 
 mkdir ~/.config
 mkdir ~/.config/i3
+mkdir ~/.config/dunst
+mkdir ~/.config/compton
+mkdir ~/.config/rofi
 
 sudo cp .config/i3/config ~/.config/i3/config
 sudo cp .Xresources ~/.Xresources
