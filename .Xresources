@@ -1,3 +1,5 @@
+URxvt.perl-ext-common: font-size
+
 !! Colorscheme
 
 ! special
@@ -40,15 +42,17 @@
 !! Appearance
 URxvt.termName: rxvt-unicode
 URxvt.scrollBar: false
-URxvt.background: black
+!! URxvt.background: black
 URxvt.foreground: gray
 !! Font prefferenes
-URxvt.font: xft:Hack:pixelsize=14
+URxvt.font: xft:Hack:pixelsize=16
 URxvt.boldFont: xft:Hack:pixelsize=14:weight=bold
 URxvt.letterSpace: -1
 !! Larger history limit
 URxvt.saveLines: 1000000
 
 !! fancy  stuff
-URxvt.transparent:   true
-URxvt.shading:       15
+!! URxvt.transparent:   true
+!! URxvt.shading:       15
+URxvt*depth: 32
+URxvt*background: rgba:0000/0000/0200/e000

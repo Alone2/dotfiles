@@ -32,4 +32,4 @@ git clone https://aur.archlinux.org/yay.git
 cd yay 
 makepkg -si
 
-yay -S compton-rounded-corners i3-volume
+yay -S compton-rounded-corners i3-volume urxvt-font-size-git
