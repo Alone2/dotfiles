@@ -19,7 +19,7 @@ normalize() {
 
 if [ ! -f "$STATUS" ]; 
 then
-	return
+	exit
 fi
 
 if [ "$STATUS" = "Charging" ]
