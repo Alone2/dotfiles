@@ -8,4 +8,7 @@
 alias ls='ls --color=auto'
 PS1='[\u@\h \W]\$ '
 
+# use neovim
+alias vim='nvim'
+
 set -o vi

@@ -4,28 +4,27 @@ separator=false
 separator_block_width=18
 
 [memory]
-command=/home/alain/.config/i3blocks/memory
-label=MEM
+command=~/.config/i3blocks/memory
 interval=30
 
 [local-ip]
 command=ip route get 1 | awk '{print $7;exit}'
-interval=200
+interval=5
 
 [date]
-command=date +%d/%m/%Y
+command=date +%d.%m.%Y
 interval=5
 
 [volume]
-command=/home/alain/.config/i3blocks/volume
+command=~/.config/i3blocks/volume
 label=♪
 interval=once
 signal=10
 
 [battery]
-label=⚡
-command=cat /sys/class/power_supply/BAT0/capacity 
-interval=30
+command=~/.config/i3blocks/battery 10
+interval=10
+markup=pango
 
 [time]
 command=date +%H:%M
