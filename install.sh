@@ -13,6 +13,7 @@ sudo cp .config/compton ~/.config/
 sudo cp .config/rofi ~/.config/
 sudo cp .bashrc ~/.bashrc
 sudo cp .bash_profile ~/.bash_profile
+sudo cp .xinitrc ~/.xinitrc
 
 sudo systemctl enable NetworkManager
 sudo systemctl start NetworkManager
