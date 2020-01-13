@@ -17,6 +17,11 @@ normalize() {
 	fi
 }
 
+if [ ! -f "$STATUS" ]; 
+then
+	return
+fi
+
 if [ "$STATUS" = "Charging" ]
 then
 	normalize	
