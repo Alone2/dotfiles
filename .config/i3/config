@@ -266,13 +266,13 @@ set $volumestepop 5
 
 # append "-c $alsacard" without quotes to override default card
 # bindsym XF86AudioRaiseVolume exec $volumepath/volume -anp -i $volumestep -t $statuscmd -u $statussig
-bindsym XF86AudioRaiseVolume exec $volumepath/volume -anp -i $volumestep -t $statuscmd -u $statussig
-bindsym XF86AudioLowerVolume exec $volumepath/volume -anp -d $volumestep -t $statuscmd -u $statussig
-bindsym XF86AudioMute        exec $volumepath/volume -amn -t $statuscmd -u $statussig
+bindsym XF86AudioRaiseVolume exec i3-volume -anp -i $volumestep -t $statuscmd -u $statussig
+bindsym XF86AudioLowerVolume exec i3-volume -anp -d $volumestep -t $statuscmd -u $statussig
+bindsym XF86AudioMute        exec i3-volume -amn -t $statuscmd -u $statussig
 
 # mod -p and mod -o
-bindsym $mod+p exec $volumepath/volume -anp -i $volumestepop -t $statuscmd -u $statussig
-bindsym $mod+o exec $volumepath/volume -anp -d $volumestepop -t $statuscmd -u $statussig
+bindsym $mod+p exec i3-volume -anp -i $volumestepop -t $statuscmd -u $statussig
+bindsym $mod+o exec i3-volume -anp -d $volumestepop -t $statuscmd -u $statussig
 
 
 # Screen brightness

@@ -12,15 +12,15 @@ mkdir ~/.config/dunst
 mkdir ~/.config/compton
 mkdir ~/.config/rofi
 
-sudo cp .config/i3/config ~/.config/i3/config
-sudo cp .Xresources ~/.Xresources
-sudo cp .config/i3blocks/* ~/.config/i3blocks
-sudo cp .config/dunst/* ~/.config/dunst
-sudo cp .config/compton/* ~/.config/compton
-sudo cp .config/rofi/* ~/.config/rofi
-sudo cp .bashrc ~/.bashrc
-sudo cp .bash_profile ~/.bash_profile
-sudo cp .xinitrc ~/.xinitrc
+cp .config/i3/config ~/.config/i3/config
+cp .Xresources ~/.Xresources
+cp .config/i3blocks/* ~/.config/i3blocks
+cp .config/dunst/* ~/.config/dunst
+cp .config/compton/* ~/.config/compton
+cp .config/rofi/* ~/.config/rofi
+cp .bashrc ~/.bashrc
+cp .bash_profile ~/.bash_profile
+cp .xinitrc ~/.xinitrc
 
 sudo systemctl enable NetworkManager
 sudo systemctl start NetworkManager
