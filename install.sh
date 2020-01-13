@@ -8,6 +8,7 @@ amixer sset Headphone unmute
 
 mkdir ~/.config
 mkdir ~/.config/i3
+mkdir ~/.config/i3blocks
 mkdir ~/.config/dunst
 mkdir ~/.config/compton
 mkdir ~/.config/rofi
