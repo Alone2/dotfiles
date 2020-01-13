@@ -10,10 +10,10 @@ mkdir ~/.config/rofi
 
 sudo cp .config/i3/config ~/.config/i3/config
 sudo cp .Xresources ~/.Xresources
-sudo cp -r .config/i3blocks ~/.config/
-sudo cp -r .config/dunst ~/.config/
-sudo cp -r .config/compton ~/.config/
-sudo cp -r .config/rofi ~/.config/
+sudo cp .config/i3blocks/* ~/.config/i3blocks
+sudo cp .config/dunst/* ~/.config/dunst
+sudo cp .config/compton/* ~/.config/compton
+sudo cp .config/rofi/* ~/.config/rofi
 sudo cp .bashrc ~/.bashrc
 sudo cp .bash_profile ~/.bash_profile
 sudo cp .xinitrc ~/.xinitrc
