@@ -12,6 +12,7 @@ mkdir ~/.config/i3blocks
 mkdir ~/.config/dunst
 mkdir ~/.config/compton
 mkdir ~/.config/rofi
+mkdir ~/.config/nvim
 
 cp .config/i3/config ~/.config/i3/config
 cp .Xresources ~/.Xresources
@@ -19,6 +20,7 @@ cp .config/i3blocks/* ~/.config/i3blocks
 cp .config/dunst/* ~/.config/dunst
 cp .config/compton/* ~/.config/compton
 cp .config/rofi/* ~/.config/rofi
+cp .config/nvim/* ~/.config/nvim
 cp .bashrc ~/.bashrc
 cp .bash_profile ~/.bash_profile
 cp .xinitrc ~/.xinitrc
@@ -32,4 +34,6 @@ git clone https://aur.archlinux.org/yay.git
 cd yay 
 makepkg -si
 
-yay -S compton-rounded-corners i3-volume urxvt-font-size-git
+yay -S compton-rounded-corners i3-volume urxvt-font-size-git neovim-youcompleteme-core-git neovim-plug
+
+nvim -E +PlugInstall +qall
