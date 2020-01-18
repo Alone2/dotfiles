@@ -45,4 +45,3 @@ yay -S compton-rounded-corners i3-volume urxvt-font-size-git neovim-youcompletem
 
 nvim -E +PlugInstall +qall
 
-feh-
