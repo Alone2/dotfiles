@@ -24,6 +24,13 @@ cp .config/nvim/* ~/.config/nvim
 cp .bashrc ~/.bashrc
 cp .bash_profile ~/.bash_profile
 cp .xinitrc ~/.xinitrc
+cp .fehbgLOWBAT ~/.fehbgLOWBAT 
+cp default.png ~/.defaultBG.png
+
+if [ -f "~/.fehbg" ];
+then 
+	feh --bg-fill ~/.defaultBG.png
+fi
 
 sudo systemctl enable NetworkManager
 sudo systemctl start NetworkManager
@@ -37,3 +44,5 @@ makepkg -si
 yay -S compton-rounded-corners i3-volume urxvt-font-size-git neovim-youcompleteme-core-git neovim-plug
 
 nvim -E +PlugInstall +qall
+
+feh-
