@@ -2,7 +2,7 @@ echo WARNING: RUN SCRIPT AS USER NOT ROOT
 
 sudo pacman -Syu
 
-sudo pacman -S ttf-fira-code gnu-free-fonts ttf-hack noto-fonts ttf-roboto rofi i3-gaps rxvt-unicode i3blocks firefox base-devel dunst arc-gtk-theme networkmanager network-manager-applet gtk3 scrot blueman neovim xorg-xinit xorg-server feh bluez pulseaudio alsa-utils redshift
+sudo pacman -S ttf-fira-code gnu-free-fonts ttf-hack noto-fonts ttf-roboto rofi i3-gaps rxvt-unicode i3blocks base-devel dunst arc-gtk-theme networkmanager network-manager-applet gtk3 scrot blueman vim xorg-xinit xorg-server feh bluez pulseaudio alsa-utils xorg-xbacklight git
 
 amixer sset Master unmute
 amixer sset Speaker unmute
@@ -14,36 +14,26 @@ mkdir ~/.config/i3blocks
 mkdir ~/.config/dunst
 mkdir ~/.config/compton
 mkdir ~/.config/rofi
-mkdir ~/.config/nvim
 
 cp .config/i3/config ~/.config/i3/config
 cp .Xresources ~/.Xresources
 cp .config/i3blocks/* ~/.config/i3blocks
 cp .config/dunst/* ~/.config/dunst
-cp .config/compton/* ~/.config/compton
 cp .config/rofi/* ~/.config/rofi
-cp .config/nvim/* ~/.config/nvim
 cp .bashrc ~/.bashrc
 cp .bash_profile ~/.bash_profile
 cp .xinitrc ~/.xinitrc
-cp .fehbgLOWBAT ~/.fehbgLOWBAT 
-cp default.png ~/.defaultBG.png
-
-if [ ! -f "~/.fehbg" ];
-then 
-	feh --bg-fill ~/.defaultBG.png
-fi
 
 sudo systemctl enable NetworkManager
 sudo systemctl start NetworkManager
 
 mkdir ~/Temp
 cd ~/Temp
-git clone https://aur.archlinux.org/yay.git
-cd yay 
+git clone https://aur.archlinux.org/i3-volume.git
+cd i3-volume
 makepkg -si
-
-yay -S compton-rounded-corners i3-volume urxvt-font-size-git neovim-youcompleteme-core-git neovim-plug
-
-nvim -E +PlugInstall +qall
+cd ~/Temp
+git clone https://aur.archlinux.org/urxvt-font-size-git.git
+cd urxvt-font-size-git
+makepkg -si
 
