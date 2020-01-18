@@ -29,7 +29,7 @@ cp .xinitrc ~/.xinitrc
 cp .fehbgLOWBAT ~/.fehbgLOWBAT 
 cp default.png ~/.defaultBG.png
 
-if [ -f "~/.fehbg" ];
+if [ ! -f "~/.fehbg" ];
 then 
 	feh --bg-fill ~/.defaultBG.png
 fi
