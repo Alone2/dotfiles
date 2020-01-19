@@ -1,7 +1,12 @@
 #!/bin/sh
 
-cd ~/.config/i3blocks/
+cd ~/.config/polybar/
 # Push notification when low battery
+
+if [ ! -f "/sys/class/power_supply/BAT0/capacity" ]; 
+then
+	exit
+fi
 
 BAT=$(cat /sys/class/power_supply/BAT0/capacity)
 STATUS=$(cat /sys/class/power_supply/BAT0/status)
@@ -17,10 +22,6 @@ normalize() {
 	fi
 }
 
-if [ ! -f "$STATUS" ]; 
-then
-	return
-fi
 
 if [ "$STATUS" = "Charging" ]
 then
