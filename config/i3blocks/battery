@@ -3,6 +3,12 @@
 cd ~/.config/i3blocks/
 # Push notification when low battery
 
+if [ ! -f "/sys/class/power_supply/BAT0" ]; 
+then
+	exit
+fi
+
+
 BAT=$(cat /sys/class/power_supply/BAT0/capacity)
 STATUS=$(cat /sys/class/power_supply/BAT0/status)
 SENTBATMES=$(cat ./sent.txt)
@@ -15,11 +21,6 @@ normalize() {
 		echo 1 > ./sent.txt
 	fi
 }
-
-if [ ! -f "$STATUS" ]; 
-then
-	exit
-fi
 
 if [ "$STATUS" = "Charging" ]
 then
