@@ -7,19 +7,14 @@
 exec --no-startup-id nm-applet
 exec --no-startup-id blueman-applet
 
-exec --no-startup-id i3-msg 'workspace 10; exec firefox; workspace 1; exec urxvt'
+exec --no-startup-id i3-msg 'workspace 1; exec urxvt'
 
 exec "setxkbmap -layout ch"
 
 exec --no-startup-id /usr/bin/dunst
 
-exec --no-startup-id compton
- 
 exec xinput set-prop 12 309 1
 exec xinput set-prop 12 319 1
-
-# Lockscreen at first start
-exec --no-startup-id betterlockscreen --lock
 
 # i3 config file (v4)
 #
@@ -153,10 +148,6 @@ bindsym $mod+m exec "xrandr --output HDMI1 --auto --right-of eDP1"
 bindsym $mod+Shift+m exec "xrandr --output HDMI1 --same-as eDP1"
 #byndsym $mod+n move workspace to output right
 
-# night mode
-bindsym $mod+i exec "redshift -PO 2500"
-bindsym $mod+Shift+i exec "redshift -x"
-
 # reload the configuration file
 bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
@@ -208,9 +199,6 @@ bar {
     }
 
 }
-
-# custom stuff I added
-bindsym $mod+dollar exec firefox 
 
 
 gaps outer 5
