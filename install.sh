@@ -2,7 +2,7 @@ echo WARNING: RUN SCRIPT AS USER NOT ROOT
 
 sudo pacman -Syu
 
-sudo pacman -S ttf-fira-code gnu-free-fonts ttf-hack noto-fonts ttf-roboto rofi i3-gaps rxvt-unicode firefox base-devel dunst arc-gtk-theme networkmanager network-manager-applet gtk3 scrot blueman neovim xorg-xinit xorg-server feh bluez pulseaudio alsa-utils redshift polybar	bdf-unifont ttf-dejavu
+sudo pacman -S ttf-fira-code gnu-free-fonts ttf-hack noto-fonts ttf-roboto rofi i3-gaps rxvt-unicode firefox base-devel dunst arc-gtk-theme networkmanager network-manager-applet gtk3 scrot blueman neovim xorg-xinit xorg-server feh bluez pulseaudio alsa-utils redshift	bdf-unifont ttf-dejavu
 
 amixer sset Master unmute
 amixer sset Speaker unmute
@@ -44,7 +44,7 @@ git clone https://aur.archlinux.org/yay.git
 cd yay 
 makepkg -si
 
-yay -S compton-rounded-corners i3-volume urxvt-font-size-git neovim-youcompleteme-core-git neovim-plug siji-git
+yay -S compton-rounded-corners i3-volume urxvt-font-size-git neovim-youcompleteme-core-git neovim-plug siji-git polybar
 
 nvim -E +PlugInstall +qall
 
