@@ -1,2 +1,2 @@
 #!/bin/sh
-feh --no-fehbg --bg-fill "~/.config/i3blocks/black.png"
+feh --no-fehbg --bg-fill "~/.wallpaper/black.png"

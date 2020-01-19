@@ -6,8 +6,8 @@ cd ~/.config/i3blocks/
 BAT=$(cat /sys/class/power_supply/BAT0/capacity)
 STATUS=$(cat /sys/class/power_supply/BAT0/status)
 SENTBATMES=$(cat ./sent.txt)
-COLOR1="<span foreground='Tomato'>"
-COLOR2="</span>"
+COLOR1=""
+COLOR2=""
 
 normalize() {
 	if [ $SENTBATMES -eq 0 ]
@@ -19,17 +19,17 @@ normalize() {
 
 if [ ! -f "$STATUS" ]; 
 then
-	exit
+	return
 fi
 
 if [ "$STATUS" = "Charging" ]
 then
 	normalize	
-	COLOR1="<span foreground='MediumSeaGreen'>"
+	COLOR1=""
 elif [ $BAT -gt $1 ]
 then
 	normalize
-	COLOR1="<span>"
+	COLOR1=""
 elif [ $SENTBATMES -eq 1 ]
 then
 	echo 0 > ./sent.txt
@@ -38,5 +38,6 @@ then
 	xbacklight -set 20
 fi
 
-echo $COLOR1⚡$BAT%$COLOR2
+#echo $COLOR1⚡$BAT%$COLOR2
+echo $BAT%
 
