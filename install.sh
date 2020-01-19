@@ -2,7 +2,7 @@ echo WARNING: RUN SCRIPT AS USER NOT ROOT
 
 sudo pacman -Syu
 
-sudo pacman -S ttf-hack rofi i3-gaps rxvt-unicode i3blocks dunst arc-gtk-theme networkmanager network-manager-applet gtk3 scrot blueman vim xorg-xinit xorg-server feh bluez pulseaudio alsa-utils xorg-xbacklight git arch-install-scripts netcat nmap
+sudo pacman -S ttf-hack rofi i3-gaps rxvt-unicode i3blocks dunst arc-gtk-theme networkmanager network-manager-applet gtk3 scrot blueman vim xorg-xinit xorg-server feh bluez pulseaudio alsa-utils xorg-xbacklight git arch-install-scripts netcat nmap base-devel
 
 amixer sset Master unmute
 amixer sset Speaker unmute
