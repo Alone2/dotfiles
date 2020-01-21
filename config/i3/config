@@ -201,6 +201,8 @@ bar {
 }
 
 
+bindsym $mod+dollar exec qutebrowser
+
 gaps outer 5
 gaps inner 20
 
