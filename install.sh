@@ -8,6 +8,7 @@ amixer sset Master unmute
 amixer sset Speaker unmute
 amixer sset Headphone unmute
 
+mkdir ~/.wallpaper
 mkdir ~/.config
 mkdir ~/.config/i3
 mkdir ~/.config/i3blocks
@@ -19,6 +20,7 @@ cp .Xresources ~/.Xresources
 cp config/i3blocks/* ~/.config/i3blocks
 cp config/dunst/* ~/.config/dunst
 cp config/rofi/* ~/.config/rofi
+cp wallpaper/* ~/.wallpaper
 cp .bashrc ~/.bashrc
 cp .bash_profile ~/.bash_profile
 cp .xinitrc ~/.xinitrc
@@ -28,11 +30,15 @@ sudo systemctl start NetworkManager
 
 mkdir ~/Temp
 cd ~/Temp
-git clone https://aur.archlinux.org/i3-volume.git
+git clone https://aur.archlinux.org/i3-volume
 cd i3-volume
 makepkg -si
 cd ~/Temp
-git clone https://aur.archlinux.org/urxvt-font-size-git.git
+git clone https://aur.archlinux.org/urxvt-font-size-git
 cd urxvt-font-size-git
 makepkg -si
 
+if [ ! -f "~/.fehbg" ];
+then
+	echo -e "#!""/bin/sh\nfeh --no-fehbg --bg-fill '$HOME/.wallpaper/gray.png'" > ~/.fehbg
+fi

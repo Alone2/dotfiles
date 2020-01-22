@@ -3,7 +3,7 @@
 cd ~/.config/i3blocks/
 # Push notification when low battery
 
-if [ ! -f "/sys/class/power_supply/BAT0" ]; 
+if [ ! -f "/sys/class/power_supply/BAT0/capacity" ]; 
 then
 	exit
 fi
@@ -37,5 +37,5 @@ then
 	xbacklight -set 20
 fi
 
-echo $COLOR1⚡$BAT%$COLOR2
+echo $COLOR1$BAT%$COLOR2
 
