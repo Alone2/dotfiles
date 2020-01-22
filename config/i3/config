@@ -7,7 +7,7 @@
 exec --no-startup-id nm-applet
 exec --no-startup-id blueman-applet
 
-exec --no-startup-id i3-msg 'workspace 1; exec urxvt'
+exec --no-startup-id i3-msg 'workspace 1; exec eatmydata urxvt'
 
 exec "setxkbmap -layout ch"
 
@@ -44,7 +44,7 @@ font pango:Hack 10
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec i3-sensible-terminal
+bindsym $mod+Return exec eatmydata i3-sensible-terminal
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -201,7 +201,7 @@ bar {
 }
 
 
-bindsym $mod+dollar exec qutebrowser
+bindsym $mod+dollar exec eatmydata qutebrowser
 
 gaps outer 5
 gaps inner 20

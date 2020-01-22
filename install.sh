@@ -2,7 +2,7 @@ echo WARNING: RUN SCRIPT AS USER NOT ROOT
 
 sudo pacman -Syu
 
-sudo pacman -S ttf-hack rofi i3-gaps rxvt-unicode i3blocks dunst arc-gtk-theme networkmanager network-manager-applet gtk3 scrot blueman vim xorg-xinit xorg-server feh bluez pulseaudio alsa-utils xorg-xbacklight git arch-install-scripts netcat nmap base-devel qutebrowser
+sudo pacman -S ttf-hack rofi i3-gaps rxvt-unicode i3blocks dunst arc-gtk-theme networkmanager network-manager-applet gtk3 scrot blueman vim xorg-xinit xorg-server feh bluez pulseaudio alsa-utils xorg-xbacklight git arch-install-scripts netcat nmap base-devel qutebrowser libeatmydata
 
 amixer sset Master unmute
 amixer sset Speaker unmute
@@ -34,9 +34,12 @@ git clone https://aur.archlinux.org/i3-volume
 cd i3-volume
 makepkg -si
 cd ~/Temp
+rm -rf i3-volume
 git clone https://aur.archlinux.org/urxvt-font-size-git
 cd urxvt-font-size-git
 makepkg -si
+cd ~/Temp
+rm -rf urxvt-font-size-git
 
 if [ ! -f "~/.fehbg" ];
 then
