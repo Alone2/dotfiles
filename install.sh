@@ -41,7 +41,7 @@ makepkg -si
 cd ~/Temp
 rm -rf urxvt-font-size-git
 
-pacman -Rs binutils fakeroot
+sudo pacman -Rs binutils fakeroot
 
 if [ ! -f "~/.fehbg" ];
 then
