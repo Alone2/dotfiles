@@ -2,7 +2,7 @@ echo WARNING: RUN SCRIPT AS USER NOT ROOT
 
 sudo pacman -Syu
 
-sudo pacman -S ttf-hack rofi i3-gaps rxvt-unicode i3blocks dunst arc-gtk-theme networkmanager network-manager-applet gtk3 scrot blueman vim xorg-xinit xorg-server feh bluez pulseaudio alsa-utils xorg-xbacklight git arch-install-scripts netcat nmap base-devel qutebrowser libeatmydata
+sudo pacman -S ttf-hack rofi i3-gaps rxvt-unicode i3blocks dunst arc-gtk-theme networkmanager network-manager-applet gtk3 scrot blueman vim xorg-xinit xorg-server feh bluez pulseaudio alsa-utils xorg-xbacklight git arch-install-scripts netcat nmap sudo fakeroot binutils qutebrowser libeatmydata
 
 amixer sset Master unmute
 amixer sset Speaker unmute
@@ -40,6 +40,8 @@ cd urxvt-font-size-git
 makepkg -si
 cd ~/Temp
 rm -rf urxvt-font-size-git
+
+pacman -Rs binutils fakeroot
 
 if [ ! -f "~/.fehbg" ];
 then
