@@ -30,3 +30,7 @@ markup=pango
 command=date +%H:%M
 interval=5
 
+[wifi]
+interval=once
+command=echo "WIFI"; [[ -z "${BLOCK_BUTTON}" ]]; i3-msg exec "urxvt -e sh -c nmtui"
+

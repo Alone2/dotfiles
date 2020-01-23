@@ -2,7 +2,7 @@ echo WARNING: RUN SCRIPT AS USER NOT ROOT
 
 sudo pacman -Syu
 
-sudo pacman -S ttf-hack rofi i3-gaps rxvt-unicode i3blocks dunst arc-gtk-theme networkmanager network-manager-applet gtk3 scrot vim xorg-xinit xorg-server feh bluez pulseaudio alsa-utils xorg-xbacklight git arch-install-scripts netcat nmap sudo fakeroot binutils qutebrowser libeatmydata
+sudo pacman -S ttf-hack rofi i3-gaps rxvt-unicode i3blocks dunst networkmanager scrot vim xorg-xinit xorg-server feh bluez pulseaudio alsa-utils xorg-xbacklight git arch-install-scripts netcat nmap sudo fakeroot binutils firefox libeatmydata
 
 amixer sset Master unmute
 amixer sset Speaker unmute
@@ -46,4 +46,5 @@ sudo pacman -Rs binutils fakeroot
 if [ ! -f "~/.fehbg" ];
 then
 	echo -e "#!""/bin/sh\nfeh --no-fehbg --bg-fill '$HOME/.wallpaper/gray.png'" > ~/.fehbg
+	sudo chmod 755 ~/.fehbg
 fi
