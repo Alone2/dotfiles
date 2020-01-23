@@ -32,7 +32,7 @@ cp ./wallpaper/default.png ~/.wallpaper/default.png
 
 if [ ! -f "~/.fehbg" ];
 then 
-	cp .fehbg ~/.fehbg
+	echo -e "#!""/bin/sh\nfeh --no-fehbg --bg-fill '$HOME/.wallpaper/default.png'" > ~/.fehbg
 fi
 
 sudo systemctl enable NetworkManager
