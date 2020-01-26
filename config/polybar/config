@@ -62,7 +62,7 @@ modules-right = pulseaudio memory cpu battery date
 
 tray-position = right
 tray-padding = 2
-tray-offset-y = 4
+#tray-offset-y = 4
 
 scroll-up = i3wm-wsnext
 scroll-down = i3wm-wsprev

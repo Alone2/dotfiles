@@ -29,10 +29,15 @@ cp .bash_profile ~/.bash_profile
 cp .xinitrc ~/.xinitrc
 cp .fehbgLOWBAT ~/.fehbgLOWBAT 
 cp ./wallpaper/default.png ~/.wallpaper/default.png
+cp ./wallpaper/black.png ~/.wallpaper/black.png
+
+echo -e "#!""/bin/sh\nfeh --no-fehbg --bg-fill '$HOME/.wallpaper/black.png'" > ~/.fehbgLOWBAT
+chmod +x ~/.fehbgLOWBAT
 
 if [ ! -f "~/.fehbg" ];
 then 
 	echo -e "#!""/bin/sh\nfeh --no-fehbg --bg-fill '$HOME/.wallpaper/default.png'" > ~/.fehbg
+	chmod +x ~/.fehbg
 fi
 
 sudo systemctl enable NetworkManager
@@ -44,7 +49,7 @@ git clone https://aur.archlinux.org/yay.git
 cd yay 
 makepkg -si
 
-yay -S compton-rounded-corners i3-volume urxvt-font-size-git neovim-youcompleteme-core-git neovim-plug siji-git polybar
+yay -S i3-volume urxvt-font-size-git neovim-youcompleteme-core-git neovim-plug siji-git polybar
 
 nvim -E +PlugInstall +qall
 
