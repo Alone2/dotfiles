@@ -2,7 +2,7 @@ echo WARNING: RUN SCRIPT AS USER NOT ROOT
 
 sudo pacman -Syu
 
-sudo pacman -S ttf-fira-code gnu-free-fonts ttf-hack noto-fonts ttf-roboto rofi i3-gaps rxvt-unicode firefox base-devel dunst arc-gtk-theme networkmanager network-manager-applet gtk3 scrot blueman neovim xorg-xinit xorg-server feh bluez pulseaudio alsa-utils redshift	bdf-unifont ttf-dejavu
+sudo pacman -S ttf-fira-code gnu-free-fonts ttf-hack noto-fonts ttf-roboto rofi i3-gaps rxvt-unicode firefox base-devel dunst gnome-themes-extra networkmanager network-manager-applet gtk3 scrot blueman neovim xorg-xinit xorg-server feh bluez pulseaudio alsa-utils redshift	bdf-unifont ttf-dejavu
 
 amixer sset Master unmute
 amixer sset Speaker unmute
@@ -15,6 +15,7 @@ mkdir ~/.config/dunst
 mkdir ~/.config/compton
 mkdir ~/.config/rofi
 mkdir ~/.config/nvim
+mkdir ~/.config/gtk-3.0
 mkdir ~/.wallpaper
 
 cp config/i3/config ~/.config/i3/config
@@ -24,6 +25,7 @@ cp config/dunst/* ~/.config/dunst
 cp config/compton/* ~/.config/compton
 cp config/rofi/* ~/.config/rofi
 cp config/nvim/* ~/.config/nvim
+cp config/gtk-3.0/* ~/.config/gtk-3.0
 cp .bashrc ~/.bashrc
 cp .bash_profile ~/.bash_profile
 cp .xinitrc ~/.xinitrc
