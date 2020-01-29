@@ -12,7 +12,7 @@ mkdir ~/.config
 mkdir ~/.config/i3
 mkdir ~/.config/polybar
 mkdir ~/.config/dunst
-mkdir ~/.config/compton
+mkdir ~/.config/picom
 mkdir ~/.config/rofi
 mkdir ~/.config/nvim
 mkdir ~/.config/gtk-3.0
@@ -22,7 +22,7 @@ cp config/i3/config ~/.config/i3/config
 cp .Xresources ~/.Xresources
 cp config/polybar/* ~/.config/polybar
 cp config/dunst/* ~/.config/dunst
-cp config/compton/* ~/.config/compton
+cp config/picom/* ~/.config/picom
 cp config/rofi/* ~/.config/rofi
 cp config/nvim/* ~/.config/nvim
 cp config/gtk-3.0/* ~/.config/gtk-3.0
