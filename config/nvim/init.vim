@@ -7,8 +7,8 @@ map <C-n> :NERDTreeToggle<CR>
 call plug#begin()
 Plug 'preservim/nerdtree'
 Plug 'osyo-manga/vim-marching'
-Plug 'rip-rip/clang_complete'
 Plug 'jiangmiao/auto-pairs'
+Plug 'ajh17/vimcompletesme'
 Plug 'tpope/vim-commentary'
 call plug#end()
 
