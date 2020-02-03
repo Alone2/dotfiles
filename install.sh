@@ -36,7 +36,7 @@ cp ./wallpaper/black.png ~/.wallpaper/black.png
 echo -e "#!""/bin/sh\nfeh --no-fehbg --bg-fill '$HOME/.wallpaper/black.png'" > ~/.fehbgLOWBAT
 chmod +x ~/.fehbgLOWBAT
 
-if [ ! -f "~/.fehbg" ];
+if [ ! -f "$HOME/.fehbg" ];
 then 
 	echo -e "#!""/bin/sh\nfeh --no-fehbg --bg-fill '$HOME/.wallpaper/default.png'" > ~/.fehbg
 	chmod +x ~/.fehbg
