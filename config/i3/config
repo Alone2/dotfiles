@@ -213,6 +213,8 @@ bindsym $mod+r mode "resize"
 
 # custom stuff I added
 bindsym $mod+dollar exec firefox 
+bindsym $mod+dead_diaeresis exec urxvt -e sh -c "i3-msg floating enable && clear && bash" &
+bindsym $mod+adiaeresis exec urxvt -e sh -c "i3-msg floating enable && clear && python" &
 
 
 gaps outer 5
