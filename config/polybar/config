@@ -25,7 +25,9 @@ background-alt = #444
 foreground = #dfdfdf
 foreground-alt = #555
 primary = #40bf80
-secondary = #e60053
+secondary = #40bf80
+; secondary = #e60053
+; secondary = #4080bf
 alert = #bd2c40
 
 [bar/myBar]
@@ -58,7 +60,7 @@ font-2 = siji:pixelsize=10;1
 
 modules-left = i3
 #modules-center = mpd
-modules-right = pulseaudio memory cpu battery date 
+modules-right = pulseaudio memory cpu ipaddress battery date 
 
 tray-position = right
 tray-padding = 2
@@ -112,7 +114,7 @@ type = internal/cpu
 interval = 2
 format-prefix = "cpu"
 #format-prefix-foreground = ${colors.foreground-alt}
-format-underline = #f90000
+format-underline =  ${colors.secondary}
 label = %percentage:2%%
 
 [module/memory]
@@ -120,7 +122,7 @@ type = internal/memory
 interval = 2
 format-prefix = "mem"
 #format-prefix-foreground = ${colors.foreground-alt}
-format-underline = #4bffdc
+format-underline = ${colors.secondary}
 label = %percentage_used%%
 
 [module/wlan]
@@ -129,7 +131,7 @@ interface = wlp2s0
 interval = 3.0
 
 format-connected = <ramp-signal> <label-connected>
-format-connected-underline = #9f78e1
+format-connected-underline = ${colors.secondary}
 label-connected = %essid%
 
 #format-disconnected =
@@ -154,11 +156,27 @@ exec = ~/.config/polybar/battery 10
 ; Default: false
 tail = true
 
-format-underline = #9f78e1
+format-underline = ${colors.secondary}
 
 ; Seconds to sleep between updates
 ; Default: 5 (0 if `tail = true`)
 interval = 10
+
+[module/ipaddress]
+type = custom/script
+
+exec = ip route get 1 | awk '{print $7;exit}'
+
+; Will the script output continous content?
+; Default: false
+tail = true
+
+format-underline = ${colors.secondary}
+
+; Seconds to sleep between updates
+; Default: 5 (0 if `tail = true`)
+interval = 10
+
 
 [module/date]
 type = internal/date
@@ -172,7 +190,7 @@ time-alt = %H:%M:%S
 
 #format-prefix = 
 format-prefix-foreground = ${colors.foreground-alt}
-format-underline = #0a6cf5
+format-underline = ${colors.secondary}
 
 label = %date% %time%
 
