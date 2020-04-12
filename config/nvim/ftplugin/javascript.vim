@@ -1,4 +1,4 @@
-map <F5> :w <enter> :!npm start & <enter>
+map <F5> :w <enter> :!npm start <enter>
 " Fixer
 " ctrl + f | crtl + I
 let b:ale_fixers = ['prettier','eslint']
