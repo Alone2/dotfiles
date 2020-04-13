@@ -1,2 +1,2 @@
 [[ -f ~/.Xresources ]] && xrdb -merge ~/.Xresources
-exec i3
+exec dbus-launch i3
