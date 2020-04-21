@@ -14,7 +14,7 @@ cp config/polybar/* ~/.config/polybar
 cp config/dunst/* ~/.config/dunst
 cp config/picom/* ~/.config/picom
 cp config/rofi/* ~/.config/rofi
-cp config/nvim/* ~/.config/nvim
+cp -r config/nvim/* ~/.config/nvim
 cp config/gtk-3.0/* ~/.config/gtk-3.0
 cp .bashrc ~/.bashrc
 cp .bash_profile ~/.bash_profile
