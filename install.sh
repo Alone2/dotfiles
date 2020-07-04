@@ -2,7 +2,7 @@ echo WARNING: RUN SCRIPT AS USER NOT ROOT
 
 sudo pacman -Syu
 
-sudo pacman -S ttf-hack rofi i3-gaps rxvt-unicode i3blocks dunst networkmanager scrot vim xorg-xinit xorg-server feh bluez pulseaudio alsa-utils xorg-xbacklight git arch-install-scripts netcat nmap sudo fakeroot binutils firefox libeatmydata
+sudo pacman -S ttf-hack dmenu i3-gaps rxvt-unicode i3blocks dunst networkmanager scrot vim xorg-xinit xorg-server feh bluez pulseaudio alsa-utils xorg-xbacklight git arch-install-scripts netcat nmap sudo fakeroot binutils firefox libeatmydata
 
 amixer sset Master unmute
 amixer sset Speaker unmute
@@ -13,13 +13,11 @@ mkdir ~/.config
 mkdir ~/.config/i3
 mkdir ~/.config/i3blocks
 mkdir ~/.config/dunst
-mkdir ~/.config/rofi
 
 cp config/i3/config ~/.config/i3/config
 cp .Xresources ~/.Xresources
 cp config/i3blocks/* ~/.config/i3blocks
 cp config/dunst/* ~/.config/dunst
-cp config/rofi/* ~/.config/rofi
 cp wallpaper/* ~/.wallpaper
 cp .bashrc ~/.bashrc
 cp .bash_profile ~/.bash_profile
