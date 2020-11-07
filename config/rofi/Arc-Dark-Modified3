@@ -21,7 +21,6 @@
     alternate-active-background: rgba ( 5, 0, 5, 0 % );
     background:                  rgba ( 5, 0, 5, 95 % );
     alternate-normal-foreground: @foreground;
-    /* normal-background:           @background; */
     lightfg:                     rgba ( 88, 104, 117, 100 % );
     selected-normal-background:  rgba ( 64, 132, 214, 100 % );
     border-color:                rgba ( 64, 191, 128, 100 % );
@@ -36,6 +35,14 @@
     selected-active-background:  rgba ( 68, 145, 237, 0 % );
 }
 #window {
+    location:   south;
+    anchor:   south;
+    height:    40%;
+    width:   18%;
+    orientation:   horizontal;
+    children:   [mainbox];
+    x-offset:   0;        
+    y-offset:   -38;
     background-color: @background;
     border:           2;
     padding:          10;
@@ -62,7 +69,13 @@
 }
 #element {
     border:  0;
-    padding: 1px ;
+    padding: 5px ;
+}
+#element-text {
+    padding: 3px ;
+}
+#element-icon { 
+    size: 28px ; 
 }
 #element.normal.normal {
     background-color: @normal-background;

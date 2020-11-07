@@ -1,76 +1,50 @@
-;==========================================================
-;
-;
-;   ██████╗  ██████╗ ██╗  ██╗   ██╗██████╗  █████╗ ██████╗
-;   ██╔══██╗██╔═══██╗██║  ╚██╗ ██╔╝██╔══██╗██╔══██╗██╔══██╗
-;   ██████╔╝██║   ██║██║   ╚████╔╝ ██████╔╝███████║██████╔╝
-;   ██╔═══╝ ██║   ██║██║    ╚██╔╝  ██╔══██╗██╔══██║██╔══██╗
-;   ██║     ╚██████╔╝███████╗██║   ██████╔╝██║  ██║██║  ██║
-;   ╚═╝      ╚═════╝ ╚══════╝╚═╝   ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝
-;
-;
-;   To learn more about how to configure Polybar
-;   go to https://github.com/polybar/polybar
-;
-;   The README contains a lot of information
-;
-;==========================================================
-
-
-[colors]
-;background = ${xrdb:color0:#222}
-background = #000000
-background-alt = #444
-;foreground = ${xrdb:color7:#222}
-foreground = #dfdfdf
-foreground-alt = #555
-primary = #40bf80
-secondary = #40bf80
-; secondary = #e60053
-; secondary = #4080bf
-alert = #bd2c40
-
-[bar/myBar]
+[bar/bar]
 bottom = true
-
 width = 100%
-#override-redirect = true
-height = 27
+# height = 22
+height = 26
+# height =100
 radius = 0
 fixed-center = true
 
-background = ${colors.background}
-foreground = ${colors.foreground}
+background = #100613
+foreground = #bfbfbf
 
 line-size = 3
-line-color = #f00
+line-color =
 
 border-size = 0
-border-color = #000000
+border-color =
 
 padding-left = 0
-padding-right = 4
+padding-right = 2
 
-module-margin-left = 1
-module-margin-right = 1
+module-margin-left = 0
+module-margin-right = 0
+# module-margin-left = 1
+# module-margin-right = 2
 
-font-0 = DejaVu:pixelsize=10;1
-font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
-font-2 = siji:pixelsize=10;1
+# font-0 = "Source Code Pro Semibold:size=10;1"
+font-0 = "Hack:size=10;1"
+font-1 = "Font Awesome 5 Free:style=Solid:size=10;1"
+font-2 = "Font Awesome 5 Brands:size=10;1"
+font-3 = "font\-logos:size=13;2"
 
-modules-left = i3
-#modules-center = mpd
-modules-right = pulseaudio memory cpu ipaddress battery date 
+modules-left = i3 xwindow
+modules-center = launcher
+modules-right = powermenu pulseaudio date ipaddress battery
 
 tray-position = right
-tray-padding = 2
-#tray-offset-y = 4
+; tray-padding-right = 
+# tray-background = #40bf90
+wm-restack = i3
+#override-redirect = true
+
+cursor-click = pointer
+# cursor-scroll = ns-resize
 
 scroll-up = i3wm-wsnext
 scroll-down = i3wm-wsprev
-
-cursor-click = pointer
-#cursor-scroll = ns-resize
 
 [module/i3]
 type = internal/i3
@@ -78,105 +52,47 @@ format = <label-state> <label-mode>
 index-sort = true
 wrapping-scroll = false
 
-; Only show workspaces on the same output as the bar
-;pin-workspaces = true
-
 label-mode-padding = 2
-label-mode-foreground = #000
-label-mode-background = ${colors.primary}
+label-mode-foreground = #162025
+label-mode-background = #409fbf
 
-; focused = Active workspace on focused monitor
 label-focused = %index%
-label-focused-background = ${colors.background-alt}
-label-focused-underline= ${colors.primary}
-label-focused-padding = 2
+label-focused-background = #40bf90
+label-focused-foreground = #162025
+label-focused-padding = 1
 
-; unfocused = Inactive workspace on any monitor
 label-unfocused = %index%
-label-unfocused-padding = 2
+label-unfocused-background = #100613
+#label-unfocused-background = #001714
+label-unfocused-foreground = #EEEEEE
+label-unfocused-padding = 1
 
-; visible = Active workspace on unfocused monitor
 label-visible = %index%
-label-visible-background = ${self.label-focused-background}
-label-visible-underline = ${self.label-focused-underline}
-label-visible-padding = ${self.label-focused-padding}
+label-visible-background = #409fbf
+label-visible-foreground = #162025
+label-visible-padding = 1
 
-; urgent = Workspace with urgency hint set
 label-urgent = %index%
-label-urgent-background = ${colors.alert}
-label-urgent-padding = 2
-
-; Separator in between workspaces
-; label-separator = |
-
-[module/cpu]
-type = internal/cpu
-interval = 2
-format-prefix = "cpu"
-#format-prefix-foreground = ${colors.foreground-alt}
-format-underline =  ${colors.secondary}
-label = %percentage:2%%
-
-[module/memory]
-type = internal/memory
-interval = 2
-format-prefix = "mem"
-#format-prefix-foreground = ${colors.foreground-alt}
-format-underline = ${colors.secondary}
-label = %percentage_used%%
-
-[module/wlan]
-type = internal/network
-interface = wlp2s0
-interval = 3.0
-
-format-connected = <ramp-signal> <label-connected>
-format-connected-underline = ${colors.secondary}
-label-connected = %essid%
-
-#format-disconnected =
-format-disconnected = <label-disconnected>
-format-disconnected-underline = ${self.format-connected-underline}
-label-disconnected = %ifname% disconnected
-label-disconnected-foreground = ${colors.foreground-alt}
-
-ramp-signal-0 = A
-ramp-signal-1 = B
-ramp-signal-2 = C
-ramp-signal-3 = D
-ramp-signal-4 = F
-ramp-signal-foreground = ${colors.foreground-alt}
-
-[module/battery]
-type = custom/script
-
-exec = ~/.config/polybar/battery 10
-
-; Will the script output continous content?
-; Default: false
-tail = true
-
-format-underline = ${colors.secondary}
-
-; Seconds to sleep between updates
-; Default: 5 (0 if `tail = true`)
-interval = 10
+label-urgent-background = #bf4040
+label-urgent-foreground = #162025
+label-urgent-padding = 1
 
 [module/ipaddress]
 type = custom/script
 
-exec = ip route get 1 | awk '{print $7;exit}'
+exec = (echo -n " " && ip route get 1 | awk '{print $7;exit}')
 
 ; Will the script output continous content?
 ; Default: false
 tail = true
 
-format-underline = ${colors.secondary}
+format-foreground = #162025
+format-padding = 1
+format-background = #40bf90
 
 ; Seconds to sleep between updates
 ; Default: 5 (0 if `tail = true`)
 interval = 10
-
 
 [module/date]
 type = internal/date
@@ -188,28 +104,71 @@ date-alt = " %Y-%m-%d"
 time = %H:%M
 time-alt = %H:%M:%S
 
-#format-prefix = 
-format-prefix-foreground = ${colors.foreground-alt}
-format-underline = ${colors.secondary}
+format-prefix = 
+format-foreground = #162025
+format-background = #40bf90
+format-padding = 1
 
 label = %date% %time%
+
+[module/powermenu]
+type = custom/menu
+
+expand-right = true
+
+format-spacing = 1
+format-padding = 3
+
+label-open = 
+label-open-foreground = #40bf90
+label-close =  cancel
+label-close-foreground = #40bf90
+label-separator = |
+label-separator-foreground = #40bf90
+
+menu-0-0 = reboot
+menu-0-0-exec = menu-open-1
+menu-0-1 = power off
+menu-0-1-exec = menu-open-2
+menu-0-2 = log off
+menu-0-2-exec = menu-open-3
+
+menu-1-0 = cancel
+menu-1-0-exec = menu-open-0
+menu-1-1 = reboot
+menu-1-1-exec = reboot
+
+menu-2-0 = power off
+menu-2-0-exec = poweroff
+menu-2-1 = cancel
+menu-2-1-exec = menu-open-0
+
+menu-3-0 = log off
+menu-3-0-exec = i3 exit logout
+menu-3-1 = cancel
+menu-3-1-exec = menu-open-0
 
 [module/pulseaudio]
 type = internal/pulseaudio
 
-format-volume = <label-volume> <bar-volume>
-label-volume = v%percentage%%
-label-volume-foreground = ${root.foreground}
+format-volume = <label-volume>
+label-volume-padding = 1
+label-muted-padding = 1
+# format-spacing = 1
+label-volume =  %percentage%%
+label-volume-foreground = #162025
+format-volume-background = #40bf90
 
-label-muted = muted
-label-muted-foreground = #666
+label-muted =  mute
+label-muted-foreground = #162025
+label-muted-background = #40bf90
 
-bar-volume-width = 10
-bar-volume-foreground-0 = #55aa55
-bar-volume-foreground-1 = #55aa55
-bar-volume-foreground-2 = #55aa55
-bar-volume-foreground-3 = #55aa55
-bar-volume-foreground-4 = #55aa55
+bar-volume-width = 1
+bar-volume-foreground-0 = #40bf90
+bar-volume-foreground-1 = #40bf90
+bar-volume-foreground-2 = #40bf90
+bar-volume-foreground-3 = #40bf90
+bar-volume-foreground-4 = #40bf90
 bar-volume-foreground-5 = #f5a70a
 bar-volume-foreground-6 = #ff5555
 bar-volume-gradient = false
@@ -219,10 +178,49 @@ bar-volume-fill = =
 bar-volume-fill-font = 2
 bar-volume-empty = -
 bar-volume-empty-font = 2
-bar-volume-empty-foreground = ${colors.foreground-alt}
+bar-volume-empty-foreground = #40bf90
+
+[module/xwindow]
+type = internal/xwindow
+label-maxlen = 50
+# label = %title:0:75:...%
+label = %title%
+label-empty = Empty 
+label-underline = #40bf90
+format-margin = 4
+
+[module/launcher]
+type=custom/text
+content = 
+content-font = 4
+content-padding = 1
+padding-right = 0
+content-margin = 0
+content-foreground = #40bf90
+# content-foreground = #162025
+click-left=(cd ~ && . .config/rofi/startmenu.sh)
+# click-left=/home/alain/.config/rofi/startmenu.sh
+
+[module/battery]
+type = custom/script
+
+exec = ~/.config/polybar/battery 10
+
+; Will the script output continous content?
+; Default: false
+tail = true
+
+format-foreground = #162025
+format-padding = 1
+format-background = #40bf90
+
+; Seconds to sleep between updates
+; Default: 5 (0 if `tail = true`)
+interval = 10
+
+[settings]
+screenchange-reload = true
 
 [global/wm]
-margin-top = 5
-margin-bottom = 5
-
-; vim:ft=dosini
+margin-top = 0
+margin-bottom = 0

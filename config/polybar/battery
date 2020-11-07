@@ -26,7 +26,7 @@ normalize() {
 if [ "$STATUS" = "Charging" ]
 then
 	normalize	
-	COLOR1=""
+	COLOR1=""
 elif [ $BAT -gt $1 ]
 then
 	normalize
@@ -39,6 +39,22 @@ then
 	xbacklight -set 20
 fi
 
+if [ $BAT -gt 95 ]
+then
+	COLOR1=$COLOR1
+elif [ $BAT -gt 70 ]
+then
+	COLOR1=$COLOR1
+elif [ $BAT -gt 45 ]
+then
+	COLOR1=$COLOR1
+elif [ $BAT -gt 20 ]
+then
+	COLOR1=$COLOR1
+else
+	COLOR1=$COLOR1
+fi
+
 #echo $COLOR1⚡$BAT%$COLOR2
-echo $BAT%
+echo $COLOR1 $BAT%
 
