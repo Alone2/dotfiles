@@ -1,3 +1,13 @@
+[colors]
+background = #FA050005
+#background = #DF000000
+#background = #CC050005
+foreground-light = #EEEEEE
+foreground-dark = #162025
+primary = #40bf90
+secondary = #409fbf
+alert = #bf4040
+
 [bar/bar]
 bottom = true
 width = 100%
@@ -7,8 +17,8 @@ height = 26
 radius = 0
 fixed-center = true
 
-background = #100613
-foreground = #bfbfbf
+background = ${colors.background}
+foreground = ${colors.foreground-light}
 
 line-size = 3
 line-color =
@@ -36,7 +46,6 @@ modules-right = powermenu pulseaudio date ipaddress battery
 
 tray-position = right
 ; tray-padding-right = 
-# tray-background = #40bf90
 wm-restack = i3
 #override-redirect = true
 
@@ -53,28 +62,27 @@ index-sort = true
 wrapping-scroll = false
 
 label-mode-padding = 2
-label-mode-foreground = #162025
-label-mode-background = #409fbf
+label-mode-foreground = ${colors.foreground-dark}
+label-mode-background = ${colors.secondary}
 
 label-focused = %index%
-label-focused-background = #40bf90
-label-focused-foreground = #162025
+label-focused-background = ${colors.primary}
+label-focused-foreground = ${colors.foreground-dark}
 label-focused-padding = 1
 
 label-unfocused = %index%
-label-unfocused-background = #100613
-#label-unfocused-background = #001714
-label-unfocused-foreground = #EEEEEE
+label-unfocused-background = ${colors.background}
+label-unfocused-foreground = ${colors.foreground-light}
 label-unfocused-padding = 1
 
 label-visible = %index%
-label-visible-background = #409fbf
-label-visible-foreground = #162025
+label-visible-background = ${colors.secondary}
+label-visible-foreground = ${colors.foreground-dark}
 label-visible-padding = 1
 
 label-urgent = %index%
-label-urgent-background = #bf4040
-label-urgent-foreground = #162025
+label-urgent-background = ${colors.alert}
+label-urgent-foreground = ${colors.foreground-dark}
 label-urgent-padding = 1
 
 [module/ipaddress]
@@ -86,9 +94,9 @@ exec = (echo -n " " && ip route get 1 | awk '{print $7;exit}')
 ; Default: false
 tail = true
 
-format-foreground = #162025
+format-foreground = ${colors.foreground-dark}
 format-padding = 1
-format-background = #40bf90
+format-background = ${colors.primary}
 
 ; Seconds to sleep between updates
 ; Default: 5 (0 if `tail = true`)
@@ -105,8 +113,8 @@ time = %H:%M
 time-alt = %H:%M:%S
 
 format-prefix = 
-format-foreground = #162025
-format-background = #40bf90
+format-foreground = ${colors.foreground-dark}
+format-background = ${colors.primary}
 format-padding = 1
 
 label = %date% %time%
@@ -120,11 +128,11 @@ format-spacing = 1
 format-padding = 3
 
 label-open = 
-label-open-foreground = #40bf90
+label-open-foreground = ${colors.primary}
 label-close =  cancel
-label-close-foreground = #40bf90
+label-close-foreground = ${colors.primary}
 label-separator = |
-label-separator-foreground = #40bf90
+label-separator-foreground = ${colors.primary}
 
 menu-0-0 = reboot
 menu-0-0-exec = menu-open-1
@@ -156,29 +164,12 @@ label-volume-padding = 1
 label-muted-padding = 1
 # format-spacing = 1
 label-volume =  %percentage%%
-label-volume-foreground = #162025
-format-volume-background = #40bf90
+label-volume-foreground = ${colors.foreground-dark}
+format-volume-background = ${colors.primary}
 
 label-muted =  mute
-label-muted-foreground = #162025
-label-muted-background = #40bf90
-
-bar-volume-width = 1
-bar-volume-foreground-0 = #40bf90
-bar-volume-foreground-1 = #40bf90
-bar-volume-foreground-2 = #40bf90
-bar-volume-foreground-3 = #40bf90
-bar-volume-foreground-4 = #40bf90
-bar-volume-foreground-5 = #f5a70a
-bar-volume-foreground-6 = #ff5555
-bar-volume-gradient = false
-bar-volume-indicator = |
-bar-volume-indicator-font = 2
-bar-volume-fill = =
-bar-volume-fill-font = 2
-bar-volume-empty = -
-bar-volume-empty-font = 2
-bar-volume-empty-foreground = #40bf90
+label-muted-foreground = ${colors.foreground-dark}
+label-muted-background = ${colors.primary}
 
 [module/xwindow]
 type = internal/xwindow
@@ -186,7 +177,7 @@ label-maxlen = 50
 # label = %title:0:75:...%
 label = %title%
 label-empty = Empty 
-label-underline = #40bf90
+label-underline = ${colors.primary}
 format-margin = 4
 
 [module/launcher]
@@ -196,8 +187,8 @@ content-font = 4
 content-padding = 1
 padding-right = 0
 content-margin = 0
-content-foreground = #40bf90
-# content-foreground = #162025
+content-foreground = ${colors.primary}
+# content-foreground = ${colors.foreground-dark}
 click-left=(cd ~ && . .config/rofi/startmenu.sh)
 # click-left=/home/alain/.config/rofi/startmenu.sh
 
@@ -210,9 +201,9 @@ exec = ~/.config/polybar/battery 10
 ; Default: false
 tail = true
 
-format-foreground = #162025
+format-foreground = ${colors.foreground-dark}
 format-padding = 1
-format-background = #40bf90
+format-background = ${colors.primary}
 
 ; Seconds to sleep between updates
 ; Default: 5 (0 if `tail = true`)
