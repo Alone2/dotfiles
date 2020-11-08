@@ -14,15 +14,17 @@ cp config/polybar/* ~/.config/polybar
 cp config/dunst/* ~/.config/dunst
 cp config/picom/* ~/.config/picom
 cp config/rofi/* ~/.config/rofi
+cp config/ranger/* ~/.config/ranger
 cp -r config/nvim/* ~/.config/nvim
 cp config/gtk-3.0/* ~/.config/gtk-3.0
+
 cp .bashrc ~/.bashrc
 cp .bash_profile ~/.bash_profile
 cp .xinitrc ~/.xinitrc
+
 cp .fehbgLOWBAT ~/.fehbgLOWBAT 
 cp ./wallpaper/default.png ~/.wallpaper/default.png
 cp ./wallpaper/black.png ~/.wallpaper/black.png
-
 echo -e "#!""/bin/sh\nfeh --no-fehbg --bg-fill '$HOME/.wallpaper/black.png'" > ~/.fehbgLOWBAT
 chmod +x ~/.fehbgLOWBAT
 
