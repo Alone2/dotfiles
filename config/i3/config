@@ -60,6 +60,7 @@ bindsym $mod+Shift+q kill
 bindsym $mod+d exec sh .config/rofi/command.sh
 bindsym $mod+shift+d exec sh .config/rofi/window.sh
 bindcode 133 --release exec sh .config/rofi/startmenu.sh
+#bindsym --release $sup exec sh .config/rofi/startmenu.sh
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.
@@ -291,6 +292,7 @@ bindsym $sup+o exec xbacklight -dec 10 # decrease screen brightness
 # Screenshot
 
 # Multi-screen screenshots with scrot
+bindsym --release Shift+Print exec scrot -s 'screenshot_%Y%m%d_%H%M%S.png' -e 'mkdir -p ~/Pictures/screenshots && mv $f ~/Pictures/screenshots && xclip -selection clipboard -t image/png -i ~/Pictures/screenshots/`ls -1 -t ~/Pictures/screenshots | head -1 && notify-send -u low "screenshot" -t 700`' # Select
 bindsym --release Print exec scrot 'screenshot_%Y%m%d_%H%M%S.png' -e 'mkdir -p ~/Pictures/screenshots && mv $f ~/Pictures/screenshots && xclip -selection clipboard -t image/png -i ~/Pictures/screenshots/`ls -1 -t ~/Pictures/screenshots | head -1 && notify-send -u low "screenshot" -t 700`' # All screens
 
 # Lock screen

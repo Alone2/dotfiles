@@ -102,6 +102,8 @@ format-background = ${colors.primary}
 ; Default: 5 (0 if `tail = true`)
 interval = 10
 
+click-left = ~/.config/polybar/ipaddress
+
 [module/date]
 type = internal/date
 interval = 5
@@ -134,27 +136,44 @@ label-close-foreground = ${colors.primary}
 label-separator = |
 label-separator-foreground = ${colors.primary}
 
-menu-0-0 = reboot
-menu-0-0-exec = menu-open-1
-menu-0-1 = power off
-menu-0-1-exec = menu-open-2
-menu-0-2 = log off
-menu-0-2-exec = menu-open-3
+menu-0-0 = other
+menu-0-0-exec = menu-open-5
+menu-0-1 = hibernate
+menu-0-1-exec = menu-open-4
+menu-0-2 = poweroff
+menu-0-2-exec = menu-open-2
 
-menu-1-0 = cancel
-menu-1-0-exec = menu-open-0
-menu-1-1 = reboot
-menu-1-1-exec = reboot
+menu-1-0 = reboot
+menu-1-0-exec = reboot
+menu-1-1 = back
+menu-1-1-exec = menu-open-0
 
-menu-2-0 = power off
+menu-2-0 = poweroff
 menu-2-0-exec = poweroff
-menu-2-1 = cancel
+menu-2-1 = back
 menu-2-1-exec = menu-open-0
 
-menu-3-0 = log off
-menu-3-0-exec = i3 exit logout
-menu-3-1 = cancel
-menu-3-1-exec = menu-open-0
+menu-3-0 = back
+menu-3-0-exec = menu-open-0
+menu-3-1 = log off
+menu-3-1-exec = i3 exit logout
+
+menu-4-0 = back
+menu-4-0-exec = menu-open-0
+menu-4-1 = hibernate
+menu-4-1-exec = systemctl hibernate
+
+menu-6-0 = suspend
+menu-6-0-exec = systemctl suspend
+menu-6-1 = back
+menu-6-1-exec = menu-open-0
+
+menu-5-0 = reboot
+menu-5-0-exec = menu-open-1
+menu-5-1 = log off
+menu-5-1-exec = menu-open-3
+menu-5-2 = suspend
+menu-5-2-exec = menu-open-6
 
 [module/pulseaudio]
 type = internal/pulseaudio
