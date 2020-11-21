@@ -17,3 +17,4 @@ alias vim='nvim'
 alias xclipcp='xclip -selection clipboard'
 alias rn='ranger'
 set -o vi
+
