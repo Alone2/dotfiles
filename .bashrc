@@ -16,6 +16,6 @@ alias vim='nvim'
 # xclip to copy
 alias xclipcp='xclip -selection clipboard'
 alias rn='ranger'
-alias make="/usr/bin/make -j $(expr $(nproc) / 3 \* 2)"
+[ $(nproc) -gt 3 ] && alias make="/usr/bin/make -j $(expr $(nproc) / 3 \* 2)"
 set -o vi
 
