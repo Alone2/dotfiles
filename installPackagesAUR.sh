@@ -1,12 +1,4 @@
-# mkdir ~/Temp
-cd /tmp
-git clone https://aur.archlinux.org/yay.git
-cd yay 
-makepkg -si
-
-#yay -S i3-volume urxvt-font-size-git neovim-plug siji-git polybar picom-rounded-corners ttf-font-logos
-
-for app in i3-volume urxvt-font-size-git neovim-plug siji-git polybar picom-rounded-corners ttf-font-logos
+for app in yay i3-volume urxvt-font-size-git neovim-plug siji-git polybar picom-rounded-corners ttf-font-logos
 do
  	cd /tmp
  	git clone https://aur.archlinux.org/$app.git

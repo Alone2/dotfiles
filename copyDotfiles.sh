@@ -21,7 +21,7 @@ cp config/gtk-3.0/* ~/.config/gtk-3.0
 cp .bashrc ~/.bashrc
 cp .bash_profile ~/.bash_profile
 cp .xinitrc ~/.xinitrc
-cp .tmux.config ~/.tmux.config
+cp .tmux.conf ~/.tmux.conf
 
 cp .fehbgLOWBAT ~/.fehbgLOWBAT 
 cp ./wallpaper/default.png ~/.wallpaper/default.png
