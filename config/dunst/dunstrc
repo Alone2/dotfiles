@@ -154,8 +154,9 @@ browser = /usr/bin/firefox -new-tab
 # Paths to default icons.
 #icon_path = /usr/share/icons/Paper/16x16/mimetypes/:/usr/share/icons/Paper/48x48/status/:/usr/share/icons/Paper/16x16/devices/:/usr/share/icons/Paper/48x48/notifications/:/usr/share/icons/Paper/48x48/emblems/
 
-frame_width = 4
-frame_color = "#8EC07C"
+frame_width = 2
+# frame_color = "#8EC07C"
+frame_color = "#cccccc"
 
 [shortcuts]
 
@@ -181,17 +182,16 @@ context = mod4+shift+n
 [urgency_low]
 # IMPORTANT: colors have to be defined in quotation marks.
 # Otherwise the "#" and following would be interpreted as a comment.
-frame_color = "#4066bf"
-foreground = "#4066bf"
+# frame_color = "#4066bf"
+frame_color = "#cccccc"
+foreground = "#eeeeee"
 background = "#090909"
-#background = "#2B313C"
 timeout = 4
 
 [urgency_normal]
-frame_color = "#40bf80"
-foreground = "#40bf80"
+frame_color = "#cccccc"
+foreground = "#eeeeee"
 background = "#090909"
-#background = "#2B313C"
 timeout = 6
 
 [urgency_critical]

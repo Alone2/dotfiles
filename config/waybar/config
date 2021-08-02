@@ -1,0 +1,50 @@
+{
+    "layer": "top",
+        "position":"bottom",
+        "modules-left": ["sway/workspaces", "sway/mode"],
+        "modules-right": ["custom/poweroff","network","battery", "pulseaudio", "clock"],
+        "sway/window": {
+            "max-length": 50
+        },
+        "battery": {
+            "format": "{capacity}% {icon}",
+            "format-icons": ["", "", "", "", ""]
+        },
+        "network": {
+            "interface": "wlp2s0",
+            "format": "{ifname}",
+            "format-wifi": "{essid} ({signalStrength}%) ",
+            "format-ethernet": "{ifname} ",
+            "format-disconnected": "", //An empty format will hide the module.
+            "tooltip-format": "{ifname}",
+            "tooltip-format-wifi": "{essid} ({signalStrength}%) ",
+            "tooltip-format-ethernet": "{ifname} ",
+            "tooltip-format-disconnected": "Disconnected",
+            "max-length": 50,
+            "on-click": "sh ~/.config/waybar/launchnmconnection.sh"
+        },
+        "pulseaudio": {
+            "format": "{volume}% {icon}",
+            "format-bluetooth": "{volume}% {icon}",
+            "format-muted": "",
+            "format-icons": {
+                "headphone": "",
+                "hands-free": "",
+                "headset": "",
+                "phone": "",
+                "portable": "",
+                "car": "",
+                "default": ["", ""]
+            },
+            "scroll-step": 1,
+            "on-click": "sh ~/.config/waybar/launchnmconnection.sh pavucontrol pavucontrol"
+        },
+        "clock": {
+            "format-alt": "{:%a, %d. %b  %H:%M}"
+        },
+        "custom/poweroff": {
+            "format": " {}",
+            "on-click": "alacritty"
+        }
+
+}

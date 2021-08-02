@@ -44,3 +44,9 @@ hi clear Signcolumn " Schoenere Signcolumn
 
 " map <F2> a<C-R>=strftime("%c")<CR><Esc>
 
+" mouse
+set mouse=a
+
+" good contrast
+highlight Pmenu ctermbg=gray guibg=gray
+
